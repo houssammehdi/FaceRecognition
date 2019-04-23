@@ -1,0 +1,24 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+a{
+    font-family: 'Merriweather', serif; 
+    font-size: 1em;
+    padding-left: 5em;
+    padding-right: 5em;
+}
+
+body{
+    text-align: center !important;
+}
+
+#nav{
+    padding-right: 50px;
+    font-size: 1.5em;
+}
+
+#home{
+    color: black;
+    font-size: 2em;
+    font-weight: 800;
+    font-family: sans-serif;
+}

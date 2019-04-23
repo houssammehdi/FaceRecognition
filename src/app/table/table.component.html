@@ -1,0 +1,393 @@
+<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+<div class="container">
+  <div>
+  <table align="center" style="margin-left: 12%;" class="table text-sm-left">
+    <thead>
+      <tr>
+        <th scope="col">Description</th>
+        <th scope="col">Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Smiling</th>
+        <td>{{faceApiResponse[0]?.faceAttributes?.smile | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Gender</th>
+        <td>{{faceApiResponse[0]?.faceAttributes?.gender}}</td>
+      </tr>
+
+      <tr>
+        <th>Age</th>
+        <td>{{faceApiResponse[0]?.faceAttributes?.age}}</td>
+      </tr>
+
+      <tr>
+        <th>Moustache</th>
+        <td>{{faceApiResponse[0]?.faceAttributes?.facialHair?.moustache | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Beard</th>
+        <td>{{faceApiResponse[0]?.faceAttributes?.facialHair?.beard | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Sideburns</th>
+        <td>{{faceApiResponse[0]?.faceAttributes?.facialHair?.sideburns | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Glasses</th>
+        <td>{{faceApiResponse[0]?.faceAttributes?.glasses}}</td>
+      </tr>
+
+      <tr>
+        <th>Anger</th>
+        <td>{{faceApiResponse[0]?.faceAttributes?.emotion?.anger | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Contempt</th>
+        <td>{{faceApiResponse[0]?.faceAttributes?.emotion?.contempt | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Disgust</th>
+        <td>{{faceApiResponse[0]?.faceAttributes?.emotion?.disgust | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Fear</th>
+        <td>{{faceApiResponse[0]?.faceAttributes?.emotion?.fear | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Happiness</th>
+        <td>{{faceApiResponse[0]?.faceAttributes?.emotion?.happiness | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Neutral</th>
+        <td>{{faceApiResponse[0]?.faceAttributes?.emotion?.neutral | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Sadness</th>
+        <td>{{faceApiResponse[0]?.faceAttributes?.emotion?.sadness | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Surprise</th>
+        <td>{{faceApiResponse[0]?.faceAttributes?.emotion?.surprise | percent}}</td>
+      </tr>
+
+      <tr>
+          <th>EyeMakeup</th>
+          <td>{{faceApiResponse[0]?.faceAttributes?.makeup?.eyeMakeup}}</td>
+        </tr>
+    
+        <tr>
+          <th>LipMakeup</th>
+          <td>{{faceApiResponse[0]?.faceAttributes?.makeup?.lipMakeup}}</td>
+        </tr>
+
+    </tbody>
+
+  </table>
+
+  <table class="table text-sm-left" *ngIf="faceApiResponse[1]">
+    <thead>
+      <tr>
+        <th scope="col">Description</th>
+        <th scope="col">Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Smiling</th>
+        <td>{{faceApiResponse[1]?.faceAttributes?.smile | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Gender</th>
+        <td>{{faceApiResponse[1]?.faceAttributes?.gender}}</td>
+      </tr>
+
+      <tr>
+        <th>Age</th>
+        <td>{{faceApiResponse[1]?.faceAttributes?.age}}</td>
+      </tr>
+
+      <tr>
+        <th>Moustache</th>
+        <td>{{faceApiResponse[1]?.faceAttributes?.facialHair?.moustache | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Beard</th>
+        <td>{{faceApiResponse[1]?.faceAttributes?.facialHair?.beard | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Sideburns</th>
+        <td>{{faceApiResponse[1]?.faceAttributes?.facialHair?.sideburns | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Glasses</th>
+        <td>{{faceApiResponse[1]?.faceAttributes?.glasses}}</td>
+      </tr>
+
+      <tr>
+        <th>Anger</th>
+        <td>{{faceApiResponse[1]?.faceAttributes?.emotion?.anger | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Contempt</th>
+        <td>{{faceApiResponse[1]?.faceAttributes?.emotion?.contempt | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Disgust</th>
+        <td>{{faceApiResponse[1]?.faceAttributes?.emotion?.disgust | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Fear</th>
+        <td>{{faceApiResponse[1]?.faceAttributes?.emotion?.fear | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Happiness</th>
+        <td>{{faceApiResponse[1]?.faceAttributes?.emotion?.happiness | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Neutral</th>
+        <td>{{faceApiResponse[1]?.faceAttributes?.emotion?.neutral | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Sadness</th>
+        <td>{{faceApiResponse[1]?.faceAttributes?.emotion?.sadness | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Surprise</th>
+        <td>{{faceApiResponse[1]?.faceAttributes?.emotion?.surprise | percent}}</td>
+      </tr>
+
+      <tr>
+          <th>EyeMakeup</th>
+          <td>{{faceApiResponse[1]?.faceAttributes?.makeup?.eyeMakeup}}</td>
+        </tr>
+    
+        <tr>
+          <th>LipMakeup</th>
+          <td>{{faceApiResponse[1]?.faceAttributes?.makeup?.lipMakeup}}</td>
+        </tr>
+
+    </tbody>
+
+  </table>
+
+  <table class="table text-sm-left" *ngIf="faceApiResponse[2]">
+    <thead>
+      <tr>
+        <th scope="col">Description</th>
+        <th scope="col">Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Smiling</th>
+        <td>{{faceApiResponse[2]?.faceAttributes?.smile | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Gender</th>
+        <td>{{faceApiResponse[2]?.faceAttributes?.gender}}</td>
+      </tr>
+
+      <tr>
+        <th>Age</th>
+        <td>{{faceApiResponse[2]?.faceAttributes?.age}}</td>
+      </tr>
+
+      <tr>
+        <th>Moustache</th>
+        <td>{{faceApiResponse[2]?.faceAttributes?.facialHair?.moustache | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Beard</th>
+        <td>{{faceApiResponse[2]?.faceAttributes?.facialHair?.beard | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Sideburns</th>
+        <td>{{faceApiResponse[2]?.faceAttributes?.facialHair?.sideburns | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Glasses</th>
+        <td>{{faceApiResponse[2]?.faceAttributes?.glasses}}</td>
+      </tr>
+
+      <tr>
+        <th>Anger</th>
+        <td>{{faceApiResponse[2]?.faceAttributes?.emotion?.anger | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Contempt</th>
+        <td>{{faceApiResponse[2]?.faceAttributes?.emotion?.contempt | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Disgust</th>
+        <td>{{faceApiResponse[2]?.faceAttributes?.emotion?.disgust | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Fear</th>
+        <td>{{faceApiResponse[2]?.faceAttributes?.emotion?.fear | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Happiness</th>
+        <td>{{faceApiResponse[2]?.faceAttributes?.emotion?.happiness | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Neutral</th>
+        <td>{{faceApiResponse[2]?.faceAttributes?.emotion?.neutral | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Sadness</th>
+        <td>{{faceApiResponse[2]?.faceAttributes?.emotion?.sadness | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Surprise</th>
+        <td>{{faceApiResponse[2]?.faceAttributes?.emotion?.surprise | percent}}</td>
+      </tr>
+
+      <tr>
+          <th>EyeMakeup</th>
+          <td>{{faceApiResponse[2]?.faceAttributes?.makeup?.eyeMakeup}}</td>
+        </tr>
+    
+        <tr>
+          <th>LipMakeup</th>
+          <td>{{faceApiResponse[2]?.faceAttributes?.makeup?.lipMakeup}}</td>
+        </tr>
+
+    </tbody>
+
+  </table>
+
+  <table class="table text-sm-left" *ngIf="faceApiResponse[3]">
+    <thead>
+      <tr>
+        <th scope="col">Description</th>
+        <th scope="col">Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>Smiling</th>
+        <td>{{faceApiResponse[3]?.faceAttributes?.smile | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Gender</th>
+        <td>{{faceApiResponse[3]?.faceAttributes?.gender}}</td>
+      </tr>
+
+      <tr>
+        <th>Age</th>
+        <td>{{faceApiResponse[3]?.faceAttributes?.age}}</td>
+      </tr>
+
+      <tr>
+        <th>Moustache</th>
+        <td>{{faceApiResponse[3]?.faceAttributes?.facialHair?.moustache | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Beard</th>
+        <td>{{faceApiResponse[3]?.faceAttributes?.facialHair?.beard | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Sideburns</th>
+        <td>{{faceApiResponse[3]?.faceAttributes?.facialHair?.sideburns | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Glasses</th>
+        <td>{{faceApiResponse[3]?.faceAttributes?.glasses}}</td>
+      </tr>
+
+      <tr>
+        <th>Anger</th>
+        <td>{{faceApiResponse[3]?.faceAttributes?.emotion?.anger | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Contempt</th>
+        <td>{{faceApiResponse[3]?.faceAttributes?.emotion?.contempt | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Disgust</th>
+        <td>{{faceApiResponse[3]?.faceAttributes?.emotion?.disgust | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Fear</th>
+        <td>{{faceApiResponse[3]?.faceAttributes?.emotion?.fear | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Happiness</th>
+        <td>{{faceApiResponse[3]?.faceAttributes?.emotion?.happiness | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Neutral</th>
+        <td>{{faceApiResponse[3]?.faceAttributes?.emotion?.neutral | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Sadness</th>
+        <td>{{faceApiResponse[3]?.faceAttributes?.emotion?.sadness | percent}}</td>
+      </tr>
+
+      <tr>
+        <th>Surprise</th>
+        <td>{{faceApiResponse[3]?.faceAttributes?.emotion?.surprise | percent}}</td>
+      </tr>
+
+      <tr>
+          <th>EyeMakeup</th>
+          <td>{{faceApiResponse[3]?.faceAttributes?.makeup?.eyeMakeup}}</td>
+        </tr>
+    
+        <tr>
+          <th>LipMakeup</th>
+          <td>{{faceApiResponse[3]?.faceAttributes?.makeup?.lipMakeup}}</td>
+        </tr>
+
+    </tbody>
+
+  </table>
+
+</div>
+</div>

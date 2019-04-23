@@ -1,0 +1,71 @@
+<table align="center">
+    <tr>
+      <th>Action</th>
+      <th>Value</th>
+      <th>Submit</th>
+      <th>Result</th>
+    </tr>
+
+      <td>Create PersonGroup</td>
+      <td>
+        <input type="text" #id1 placeholder="Group ID">
+        <input type="text" #name1 placeholder="Group Name">
+        <input type="text" #data1 placeholder="userData">
+      </td>
+      <td>
+        <button (click)="createGroup(id1.value, name1.value, data1.value)" type="button" class="btn btn-primary">PUT</button>
+      </td>
+      <td>{{create_group_response | json}}</td>
+
+      <tr></tr>
+
+      <td>Create Person</td>
+      <td>
+        <input type="text" #id2 placeholder="Group ID">
+        <input type="text" #name2 placeholder="Person Name">
+        <input type="text" #data2 placeholder="Person Data">
+      </td>
+      <td>
+        <button (click)="createPerson(id2.value, name2.value, data2.value)" type="button" class="btn btn-primary">POST</button>
+      </td>
+      <td>{{create_person_response | json}}</td>
+
+      <tr></tr>
+
+      <td>Add Person Image</td>
+      <td>
+        <input type="text" #id3 placeholder="Group ID">
+        <input type="file" (change)="handleFileInput($event)">
+        <input type="text" #personID1 placeholder="Person ID">
+      </td>
+      <td>
+        <button (click)="addImage(id3.value, person_image, personID1.value)" type="button" class="btn btn-primary">POST</button>
+      </td>
+      <td> {{add_image_response | json}}</td>
+
+      <tr></tr>
+
+      <td>Get Person</td>
+      <td>
+        <input type="text" #id4 placeholder="Group ID">
+        <input type="text" #personID2 placeholder="Person ID">
+      </td>
+      <td>
+        <button (click)="getPerson(id4.value, personID2.value)" type="button" class="btn btn-primary">GET</button>
+      </td>
+      <td> {{get_person_response | json}}</td>
+
+      <tr></tr>
+
+      <td style="font-weight:bold">Train Group</td>
+      <td>
+        <input type="text" #id5 placeholder="Group ID">
+      </td>
+      <td>
+        <button (click)="trainGroup(id5.value)" type="button" class="btn btn-primary">POST</button>
+      </td>
+      <td>{{train_group_response | json}}</td>
+
+      <tr></tr>
+
+  </table>

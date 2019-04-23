@@ -1,0 +1,29 @@
+table, td, th{
+    border: 1px solid #1E487F;
+    text-align: left;
+}
+
+
+table{
+    /*display: inline-block;*/
+    display: inline-table;
+    border-collapse: collapse;
+    overflow: hidden;
+    background-color: #ddd;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-top: 50px;
+    margin-left: 0px!important;
+    width: auto!important;
+}
+
+th, td{
+    padding: 10px;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 12pt;
+}
+
+.container{
+    margin: auto;
+    padding: 10px;
+}

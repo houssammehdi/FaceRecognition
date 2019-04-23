@@ -1,0 +1,29 @@
+<div class="container">
+  <h1 id="main-title" class="intro">Upload an image to Face Detect</h1>
+  <div class="only-logo">
+    <div *ngIf="url; else elseBlock1">
+      <div class="wrapper">
+        <img id="pic" [src]="url" height="400" width="400"><br/>
+        <div *ngIf="faceApiResponse">
+          <app-rectangle [faceApiResponse]="faceApiResponse" [height]="getHeight()" [width]="getWidth()"></app-rectangle>
+        </div>
+      </div>
+    </div>
+    <ng-template #elseBlock1>
+      <img src="/assets/img/facial-recognition.png" alt="Upload Files" height="400" width="400">
+    </ng-template>
+    </div>
+
+    <div class="container2">
+        <input type="text" size="100" placeholder="Please enter an image URL (e.g. www.example.com/image.jpg)" [(ngModel)]="imageUrl" multiple>
+        <button class="button" (click)="getData_URL(imageUrl)"><span>Detect</span></button>
+    </div>
+    <div class="upload-btn-wrapper">
+          <button class="button" style="vertical-align:middle"><span>Upload a file</span></button>
+          <input type='file' accept="image/*" (change)="handleFileInput($event)" multiple>
+    </div>
+    
+    <div *ngIf="faceApiResponse; else waiting">
+      <app-table id="first" [faceApiResponse]="faceApiResponse"></app-table>
+      </div>    
+</div>
