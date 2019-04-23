@@ -14,7 +14,7 @@ export class DataService {
   private detect_url = this.endpoint_url + '/face/v1.0/detect?returnFaceAttributes=age,gender,headPose,smile,facialHair,glasses,emotion,hair,makeup,occlusion,accessories,blur,exposure,noise';
   private person_groups_url = this.endpoint_url + '/face/v1.0/persongroups/';
   private face_identify_url = this.endpoint_url + '/face/v1.0/identify';
-  private subscriptionKey: string = '0840e407275d4e1caf04198f894aba58';
+  private subscriptionKey: string = '9a70ba47f8b1453694c2b107fd69bb14';
 
   constructor(private http: HttpClient) { }
 
@@ -27,8 +27,8 @@ export class DataService {
 
   private getHeaders(){
     let headers = new HttpHeaders();
-    headers = headers.set('Content-Type', 'application/json');
     headers = headers.set('Ocp-Apim-Subscription-Key', this.subscriptionKey);
+    headers = headers.set('Content-Type', 'application/json');
     return headers;
   }
 
@@ -50,21 +50,19 @@ export class DataService {
   }
 
   addPersonImage(group_id: string, image: File, personID: string){
-    return this.http.post<any>(this.person_groups_url + group_id + '/persons/' + personID + '/persistedFaces', image, { headers: this.get_Image_Upload_Headers(), responseType: 'json', observe:'response'})
+    return this.http.post<any>(this.person_groups_url + group_id + '/persons/' + personID + '/persistedFaces', image, { headers: this.get_Image_Upload_Headers(), responseType: 'json', observe:'response'});
   }
 
   getPerson(group_id: string, _personID: string){
-    return this.http.get<any>(this.person_groups_url + group_id + '/persons/' + _personID, { headers: this.getHeaders(), responseType: 'json', observe: 'response'})
+    return this.http.get<any>(this.person_groups_url + group_id + '/persons/' + _personID, { headers: this.getHeaders(), responseType: 'json', observe: 'response'});
   } 
 
   getPersonFace(_personGroupID: string, _personID: string, _persistedFaceID: string){
-    return this.http.get<any>(this.person_groups_url + _personGroupID + '/persons/' + _personID + '/persistedFaces/' + _persistedFaceID, { headers: this.getHeaders(), responseType: 'json', observe: 'response'})
+    return this.http.get<any>(this.person_groups_url + _personGroupID + '/persons/' + _personID + '/persistedFaces/' + _persistedFaceID, { headers: this.getHeaders(), responseType: 'json', observe: 'response'});
   }
 
   trainGroup(group_id: string){
-    let headers = this.getHeaders();
-    console.log(headers);
-    return this.http.post<any>(this.person_groups_url + group_id + '/train', { headers: headers, responseType: 'json', observe: 'response' })
+    return this.http.post<any>('api/face/v1.0/persongroups/group1/train', { headers: this.getHeaders()});
   }
 
   faceIdentify(group_id: string, _faceIds: string[]){
