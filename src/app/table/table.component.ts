@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class TableComponent implements OnInit {
 
-  @Input() faceApiResponse: FaceRecognitionResponse;
+  @Input() faceApiResponse: any;
 
   constructor() { }
 

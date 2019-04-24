@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
 
-
 @Component({
   selector: 'app-upload',
   templateUrl: './detect.component.html',
@@ -11,7 +10,7 @@ export class DetectComponent implements OnInit {
 
   nbFaces = 0;
   uploadedFile: File = null;
-  faceApiResponse: FaceRecognitionResponse;
+  faceApiResponse: any;
   url: any;
   width: number;
   height: number;
@@ -26,20 +25,18 @@ export class DetectComponent implements OnInit {
     this.nbFaces = 0;
     this.uploadedFile = event.target.files[0];
 
-    await this.data.detectFace_File(this.uploadedFile).subscribe((data: FaceRecognitionResponse) => 
+    await this.data.detectFace_File(this.uploadedFile).subscribe(data => 
     {
       this.faceApiResponse = { ...data };
-      console.log(data);
     })
 
     this.getPreview(this.uploadedFile);
-
 }
 
 async getData_URL(imageURL: string){
 
   this.url = imageURL;
-  await this.data.detectFace_URL(imageURL).subscribe((data: FaceRecognitionResponse) => this.faceApiResponse = { ...data });
+  await this.data.detectFace_URL(imageURL).subscribe(data => this.faceApiResponse = { ...data });
 }
 
 getPreview(file: File){

@@ -23,8 +23,8 @@ export class IdentifyComponent implements OnInit {
   handleFileInput(event){
     this.uploadedFiles = event.target.files;
     this.getPreview(this.uploadedFiles[0]);
-    this.data.detectFace_File(this.uploadedFiles[0]).subscribe(
-      (data: FaceRecognitionResponse) => { 
+    this.data.detectFace_File(this.uploadedFiles[0]).subscribe(data => 
+      { 
         let ressource = data[0];
         this.faceIds[0] = ressource["faceId"];
       });

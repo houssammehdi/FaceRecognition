@@ -11,7 +11,7 @@ export class RectangleComponent implements OnInit {
   nbFaces = 0;
   rectangle = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0 ,0]];
 
-  @Input() faceApiResponse: FaceRecognitionResponse;
+  @Input() faceApiResponse: any;
 
   @Input() width: number;
 
@@ -41,7 +41,6 @@ export class RectangleComponent implements OnInit {
       }
     }
     this.applyRectangle();
-    console.log(this.rectangle);
     return this.nbFaces + " detected";
   }
 
@@ -53,7 +52,6 @@ export class RectangleComponent implements OnInit {
         let element = document.getElementById((i+1).toString());
         let factor_height = this.height / 400;
         let factor_width = this.width / 400;
-        console.log((i+1).toString() + " this is element");
         if(element){
           element.style.display = "block";
           element.style.top = (this.rectangle[i][0] / factor_height) + "px";
@@ -65,7 +63,6 @@ export class RectangleComponent implements OnInit {
 
       for(var j = this.nbFaces+1; j <= 4; j++){
         let element2 = document.getElementById(j.toString());
-        console.log('removed' + j.toString());
         element2.style.display = "none";
       }
   }

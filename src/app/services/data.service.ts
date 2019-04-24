@@ -33,12 +33,12 @@ export class DataService {
   }
 
   detectFace_File(image: File){
-    return this.http.post<FaceRecognitionResponse>(this.detect_url, image, { headers: this.get_Image_Upload_Headers()});
+    return this.http.post<any>(this.detect_url, image, { headers: this.get_Image_Upload_Headers()});
   }
 
   detectFace_URL(imageURL: string){
     console.log(imageURL);
-    return this.http.post<FaceRecognitionResponse>(this.detect_url, {url: imageURL}, { headers: this.getHeaders()});
+    return this.http.post<any>(this.detect_url, {url: imageURL}, { headers: this.getHeaders()});
   }
 
   createPersonGroup(group_name: string, _name: string, _userData: string){
