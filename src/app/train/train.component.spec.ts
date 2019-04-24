@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TrainComponent } from './train.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('TrainComponent', () => {
   let component: TrainComponent;
@@ -8,7 +10,9 @@ describe('TrainComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TrainComponent ]
+      declarations: [ TrainComponent ],
+      schemas: [NO_ERRORS_SCHEMA],
+      imports: [HttpClientModule]
     })
     .compileComponents();
   }));

@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RectangleComponent } from './rectangle.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('RectangleComponent', () => {
   let component: RectangleComponent;
@@ -8,7 +10,9 @@ describe('RectangleComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RectangleComponent ]
+      declarations: [ RectangleComponent ],
+      schemas: [NO_ERRORS_SCHEMA],
+      imports: [HttpClientModule]
     })
     .compileComponents();
   }));

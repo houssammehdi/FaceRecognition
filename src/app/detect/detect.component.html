@@ -15,8 +15,8 @@
     </div>
 
     <div class="container2">
-        <input type="text" size="100" placeholder="Please enter an image URL (e.g. www.example.com/image.jpg)" [(ngModel)]="imageUrl" multiple>
-        <button class="button" (click)="getData_URL(imageUrl)"><span>Detect</span></button>
+        <input type="text" size="100" placeholder="Please enter an image URL (e.g. www.example.com/image.jpg)" #imageUrl multiple>
+        <button class="button" (click)="getData_URL(imageUrl.value)"><span>Detect</span></button>
     </div>
     <div class="upload-btn-wrapper">
           <button class="button" style="vertical-align:middle"><span>Upload a file</span></button>

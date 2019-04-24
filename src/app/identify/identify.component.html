@@ -16,7 +16,7 @@
   </div>
 
   <div class="container2">
-    <input type="text" size="100" placeholder="Please enter an image URL (e.g. www.example.com/image.jpg)" [(ngModel)]="imageUrl" multiple>
+    <input type="text" size="100" placeholder="Please enter an image URL (e.g. www.example.com/image.jpg)" #imageUrl multiple>
     <button class="button" (click)="faceIdentify(groupID.value)"><span>Detect</span></button>
   </div>
 
