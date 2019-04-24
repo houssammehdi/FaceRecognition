@@ -62,7 +62,7 @@ export class DataService {
   }
 
   trainGroup(group_id: string){
-    return this.http.post<any>('api/face/v1.0/persongroups/group1/train', { headers: this.getHeaders()});
+    return this.http.post<any>(this.person_groups_url + group_id + '/train', {}, { headers: this.getHeaders(), responseType: 'json', observe: 'response'});
   }
 
   faceIdentify(group_id: string, _faceIds: string[]){

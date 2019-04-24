@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
+import { stringify } from '@angular/core/src/render3/util';
 
 @Component({
   selector: 'app-train',
@@ -20,14 +21,16 @@ export class IdentifyComponent implements OnInit {
   ngOnInit() {
   }
 
-  handleFileInput(event){
+  async handleFileInput(event, group_id: string){
     this.uploadedFiles = event.target.files;
     this.getPreview(this.uploadedFiles[0]);
-    this.data.detectFace_File(this.uploadedFiles[0]).subscribe(data => 
+    const getIDs = await this.data.detectFace_File(this.uploadedFiles[0]).toPromise().then(data => 
       { 
         let ressource = data[0];
         this.faceIds[0] = ressource["faceId"];
-      });
+      }, 
+      error => console.log(error));
+    this.faceIdentify(group_id);
   }
 
   async faceIdentify(group_id: string){
@@ -39,7 +42,18 @@ export class IdentifyComponent implements OnInit {
         this.matchName = data.body["name"] 
         this.matchData = data.body["userData"]
       });
+  }
 
+
+  async handleUrlInput(url: string, group_id: string){
+    this.url = url;
+    const getIDs = await this.data.detectFace_URL(url).toPromise().then(data => 
+      { 
+        let ressource = data[0];
+        this.faceIds[0] = ressource["faceId"];
+      }, 
+      error => console.log(error));
+    this.faceIdentify(group_id);
   }
 
 

@@ -16,13 +16,13 @@
   </div>
 
   <div class="container2">
-    <input type="text" size="100" placeholder="Please enter an image URL (e.g. www.example.com/image.jpg)" #imageUrl multiple>
-    <button class="button" (click)="faceIdentify(groupID.value)"><span>Detect</span></button>
+    <input id="url" type="text" size="100" placeholder="Please enter an image URL (e.g. www.example.com/image.jpg)" #imageUrl multiple>
+    <button class="button" (click)="handleUrlInput(imageUrl.value, groupID.value)"><span>Detect</span></button>
   </div>
 
   <div class="upload-btn-wrapper">
       <button class="button" style="vertical-align:middle"><span>Upload a file</span></button>
-      <input type='file' accept="image/*" (change)="handleFileInput($event)" multiple>
+      <input type='file' accept="image/*" (change)="handleFileInput($event, groupID.value)" multiple>
   </div>
 
   <div class="result" *ngIf="matchName">
