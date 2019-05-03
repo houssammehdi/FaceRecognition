@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DetectComponent } from '../detect/detect.component';
 
 @Component({
   selector: 'app-rectangle',
@@ -41,12 +40,10 @@ export class RectangleComponent implements OnInit {
       }
     }
     this.applyRectangle();
-    return this.nbFaces + " detected";
+    return this.nbFaces + " faces detected";
   }
 
   applyRectangle(){
-
-    console.log('nbface ' + this.nbFaces);
 
     for(var i = 0; i <= this.nbFaces; i++){
         let element = document.getElementById((i+1).toString());
