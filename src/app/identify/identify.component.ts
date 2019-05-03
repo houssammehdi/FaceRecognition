@@ -24,6 +24,8 @@ export class IdentifyComponent implements OnInit {
   async handleFileInput(event, group_id: string){
     this.uploadedFiles = event.target.files;
     this.getPreview(this.uploadedFiles[0]);
+//    const tmp = await this.data.detectFace_File(this.uploadedFiles[0]).toPromise();
+
     const getIDs = await this.data.detectFace_File(this.uploadedFiles[0]).toPromise().then(data => 
       { 
         let ressource = data[0];
