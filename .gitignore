@@ -44,3 +44,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+src/assets/img/galleria1.jpg
+src/assets/img/galleria2.jpg
+src/assets/img/galleria3.jpg
+src/assets/img/galleria4.jpg
